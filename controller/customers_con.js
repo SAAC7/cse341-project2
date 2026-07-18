@@ -50,7 +50,7 @@ const getCustomerById = async (req, res) => {
 // POST /customers
 const createCustomer = async (req, res) => {
     // #swagger.tags = ['customers'];
-    // #swagger.description = 'Endpoint to create a new contact
+    // #swagger.description = 'Endpoint to create a new contact';
     const customer = {
         firstName: req.body.firstName,
         lastName: req.body.lastName,

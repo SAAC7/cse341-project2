@@ -5,7 +5,7 @@
     "description": "This is the API documentation for the CSE341 Project. It provides information about the available endpoints, request parameters, and response formats.",
     "version": "1.0.0"
   },
-  "host": "cse341-project2-svhx.onrender.com",
+  "host": "https://cse341-project2-svhx.onrender.com",
   "basePath": "/",
   "schemes": [
     "https",
@@ -209,7 +209,7 @@
     "/customers/": {
       "get": {
         "tags": [
-          "Customers"
+          "customers"
         ],
         "description": "Endpoint to get all contacts",
         "responses": {
@@ -223,12 +223,50 @@
       },
       "post": {
         "tags": [
-          "Customers"
+          "customers"
         ],
-        "description": "Endpoint to create a new contact  const customer = {  firstName: req.body.firstName,  lastName: req.body.lastName,  email: req.body.email,  phone: req.body.phone,  membership: req.body.membership,  favoriteGenre: req.body.favoriteGenre,  moviesWatched: req.body.moviesWatched || []  };  try {  const db = getDb();  const result = await db.collection(",
+        "description": "Endpoint to create a new contact",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "firstName": {
+                  "example": "any"
+                },
+                "lastName": {
+                  "example": "any"
+                },
+                "email": {
+                  "example": "any"
+                },
+                "phone": {
+                  "example": "any"
+                },
+                "membership": {
+                  "example": "any"
+                },
+                "favoriteGenre": {
+                  "example": "any"
+                },
+                "moviesWatched": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
         "responses": {
+          "201": {
+            "description": "Created"
+          },
           "400": {
             "description": "Bad Request"
+          },
+          "500": {
+            "description": "Internal Server Error"
           }
         }
       }
@@ -236,7 +274,7 @@
     "/customers/{id}": {
       "get": {
         "tags": [
-          "Customers"
+          "customers"
         ],
         "description": "Endpoint to get a contact by ID",
         "parameters": [
@@ -264,7 +302,7 @@
       },
       "put": {
         "tags": [
-          "Customers"
+          "customers"
         ],
         "description": "Endpoint to update a contact by ID",
         "parameters": [
@@ -322,7 +360,7 @@
       },
       "delete": {
         "tags": [
-          "Customers"
+          "customers"
         ],
         "description": "Endpoint to delete a contact by ID",
         "parameters": [
