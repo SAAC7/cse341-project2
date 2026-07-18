@@ -215,7 +215,7 @@ importers:
         version: 17.4.2
       express:
         specifier: ^5.2.1
-        version: 5.2.1
+        version: 5.2.1(supports-color@5.5.0)
       express-validator:
         specifier: ^7.3.2
         version: 7.3.2
@@ -225,9 +225,12 @@ importers:
       swagger:
         specifier: ^0.7.5
         version: 0.7.5(supports-color@5.5.0)
+      swagger-autogen:
+        specifier: ^2.23.7
+        version: 2.23.7
       swagger-ui-express:
         specifier: ^5.0.1
-        version: 5.0.1(express@5.2.1)
+        version: 5.0.1(express@5.2.1(supports-color@5.5.0))
       validator:
         specifier: ^13.15.35
         version: 13.15.35
@@ -273,6 +276,11 @@ packages:
   accepts@2.0.0:
     resolution: {integrity: sha512-5cvg6CtKwfgdmVqY1WIiXKc3Q1bkRqGLi+2W/6ao+6Y7gu/RCwRuAhGEzh5B4KlszSuTLgZYuqFqo5bImjNKng==}
     engines: {node: '>= 0.6'}
+
+  acorn@7.4.1:
+    resolution: {integrity: sha512-nQyp0o1/mNdbTO1PO6kHkwSrmgZ0MT/jCCpNiwbUjGoRN4dlBhqJtoQuCnEOKzgTVwg0ZWiCoQy6SxMebQVh8A==}
+    engines: {node: '>=0.4.0'}
+    hasBin: true
 
   ansi-align@2.0.0:
     resolution: {integrity: sha512-TdlOggdA/zURfMYa7ABC66j+oqfMew58KpJMbUlH3bcZP1b+cBHIHDDn5uH9INsxrHBPjsqM0tDB4jPTF/vgJA==}
@@ -657,6 +665,10 @@ packages:
   deep-extend@0.6.0:
     resolution: {integrity: sha512-LOHxIOaPYdHlJRtCQfDIVZtfw/ufM8+rVj649RIHzcm/vGwQRXFt6OPqIFWsm2XEMrNIEtWR64sY1LEKD2vAOA==}
     engines: {node: '>=4.0.0'}
+
+  deepmerge@4.3.1:
+    resolution: {integrity: sha512-3sUqbMEc77XqpdNO7FRyRog+eW3ph+GYCbj+rK+uYyRMuwsVy0rMiVtPn+QJlKFvWP/1PYpapqYn0Me2knFn+A==}
+    engines: {node: '>=0.10.0'}
 
   define-data-property@1.1.4:
     resolution: {integrity: sha512-rBMvIzlpA8v6E+SJZoo++HAYqsLrkg7MSfIinMPFhmkorw7X+dOXVJQs+QT69zGkzMyfDnIMN2Wid1+NbL3T+A==}
@@ -1321,6 +1333,11 @@ packages:
   json-schema-deref-sync@0.6.0:
     resolution: {integrity: sha512-0efemmp3LWItb3Nux9gsoDA0xpzWaCDwoUuECEBOZQaTjAGqTrGkrJQwaIHAOD+X0SJnY+1dpsd2yE4EO+ZzRg==}
     engines: {node: '>=6.0.0'}
+
+  json5@2.2.3:
+    resolution: {integrity: sha512-XmOWe7eyHYH14cLdVPoyg+GOH3rYX++KpzrylJwSW98t3Nk+U8XOl8FWKOgwtzdb8lXGf6zYwDUzeHMWfxasyg==}
+    engines: {node: '>=6'}
+    hasBin: true
 
   jsonfile@2.4.0:
     resolution: {integrity: sha512-PKllAqbgLgxHaj8TElYymKCAgrASebJrWpTnEkOaTowt23VKXXN0sUeriJ+eh7y6ufb/CC5ap11pz71/cM0hUw==}
@@ -2143,6 +2160,9 @@ packages:
     resolution: {integrity: sha512-QjVjwdXIt408MIiAqCX4oUKsgU2EqAGzs2Ppkm4aQYbjm+ZEWEcW4SfFNTr4uMNZma0ey4f5lgLrkB0aX0QMow==}
     engines: {node: '>=4'}
 
+  swagger-autogen@2.23.7:
+    resolution: {integrity: sha512-vr7uRmuV0DCxWc0wokLJAwX3GwQFJ0jwN+AWk0hKxre2EZwusnkGSGdVFd82u7fQLgwSTnbWkxUL7HXuz5LTZQ==}
+
   swagger-converter@0.1.7:
     resolution: {integrity: sha512-O2hZbWqq8x6j0uZ4qWj5dw45WPoAxKsJLJZqOgTqRtPNi8IqA+rDkDV/48S8qanS3KGv1QcVoPNLivMbyHHdAQ==}
 
@@ -2434,6 +2454,8 @@ snapshots:
       mime-types: 3.0.2
       negotiator: 1.0.0
 
+  acorn@7.4.1: {}
+
   ansi-align@2.0.0:
     dependencies:
       string-width: 2.1.1
@@ -2546,7 +2568,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  body-parser@2.3.0:
+  body-parser@2.3.0(supports-color@5.5.0):
     dependencies:
       bytes: 3.1.2
       content-type: 2.0.0
@@ -2852,6 +2874,8 @@ snapshots:
 
   deep-extend@0.6.0: {}
 
+  deepmerge@4.3.1: {}
+
   define-data-property@1.1.4:
     dependencies:
       es-define-property: 1.0.1
@@ -3046,10 +3070,10 @@ snapshots:
       lodash: 4.18.1
       validator: 13.15.35
 
-  express@5.2.1:
+  express@5.2.1(supports-color@5.5.0):
     dependencies:
       accepts: 2.0.0
-      body-parser: 2.3.0
+      body-parser: 2.3.0(supports-color@5.5.0)
       content-disposition: 1.1.0
       content-type: 1.0.5
       cookie: 0.7.2
@@ -3059,7 +3083,7 @@ snapshots:
       encodeurl: 2.0.0
       escape-html: 1.0.3
       etag: 1.8.1
-      finalhandler: 2.1.1
+      finalhandler: 2.1.1(supports-color@5.5.0)
       fresh: 2.0.0
       http-errors: 2.0.1
       merge-descriptors: 2.0.0
@@ -3070,8 +3094,8 @@ snapshots:
       proxy-addr: 2.0.7
       qs: 6.15.3
       range-parser: 1.3.0
-      router: 2.2.0
-      send: 1.2.1
+      router: 2.2.0(supports-color@5.5.0)
+      send: 1.2.1(supports-color@5.5.0)
       serve-static: 2.2.1
       statuses: 2.0.2
       type-is: 2.1.0
@@ -3136,7 +3160,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  finalhandler@2.1.1:
+  finalhandler@2.1.1(supports-color@5.5.0):
     dependencies:
       debug: 4.4.3(supports-color@5.5.0)
       encodeurl: 2.0.0
@@ -3641,13 +3665,13 @@ snapshots:
       argparse: 1.0.10
       esprima: 4.0.1
 
-  json-refs@2.1.7:
+  json-refs@2.1.7(supports-color@5.5.0):
     dependencies:
       commander: 2.20.3
       graphlib: 2.1.8
       js-yaml: 3.15.0
       native-promise-only: 0.8.1
-      path-loader: 1.0.12
+      path-loader: 1.0.12(supports-color@5.5.0)
       slash: 1.0.0
       uri-js: 3.0.2
     transitivePeerDependencies:
@@ -3664,6 +3688,8 @@ snapshots:
       mpath: 0.5.2
       traverse: 0.6.11
       valid-url: 1.0.9
+
+  json5@2.2.3: {}
 
   jsonfile@2.4.0:
     optionalDependencies:
@@ -4106,10 +4132,10 @@ snapshots:
 
   path-key@2.0.1: {}
 
-  path-loader@1.0.12:
+  path-loader@1.0.12(supports-color@5.5.0):
     dependencies:
       native-promise-only: 0.8.1
-      superagent: 7.1.6
+      superagent: 7.1.6(supports-color@5.5.0)
     transitivePeerDependencies:
       - supports-color
 
@@ -4279,7 +4305,7 @@ snapshots:
     dependencies:
       glob: 7.2.3
 
-  router@2.2.0:
+  router@2.2.0(supports-color@5.5.0):
     dependencies:
       debug: 4.4.3(supports-color@5.5.0)
       depd: 2.0.0
@@ -4354,7 +4380,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  send@1.2.1:
+  send@1.2.1(supports-color@5.5.0):
     dependencies:
       debug: 4.4.3(supports-color@5.5.0)
       encodeurl: 2.0.0
@@ -4384,7 +4410,7 @@ snapshots:
       encodeurl: 2.0.0
       escape-html: 1.0.3
       parseurl: 1.3.3
-      send: 1.2.1
+      send: 1.2.1(supports-color@5.5.0)
     transitivePeerDependencies:
       - supports-color
 
@@ -4597,7 +4623,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  superagent@7.1.6:
+  superagent@7.1.6(supports-color@5.5.0):
     dependencies:
       component-emitter: 1.3.1
       cookiejar: 2.1.4
@@ -4620,6 +4646,13 @@ snapshots:
   supports-color@5.5.0:
     dependencies:
       has-flag: 3.0.0
+
+  swagger-autogen@2.23.7:
+    dependencies:
+      acorn: 7.4.1
+      deepmerge: 4.3.1
+      glob: 7.2.3
+      json5: 2.2.3
 
   swagger-converter@0.1.7:
     dependencies:
@@ -4647,7 +4680,7 @@ snapshots:
       commander: 2.20.3
       debug: 2.6.9(supports-color@5.5.0)
       js-yaml: 3.15.0
-      json-refs: 2.1.7
+      json-refs: 2.1.7(supports-color@5.5.0)
       lodash-compat: 3.10.2
       multer: 1.4.4
       parseurl: 1.3.3
@@ -4667,9 +4700,9 @@ snapshots:
     dependencies:
       '@scarf/scarf': 1.4.0
 
-  swagger-ui-express@5.0.1(express@5.2.1):
+  swagger-ui-express@5.0.1(express@5.2.1(supports-color@5.5.0)):
     dependencies:
-      express: 5.2.1
+      express: 5.2.1(supports-color@5.5.0)
       swagger-ui-dist: 5.32.8
 
   swagger@0.7.5(supports-color@5.5.0):

@@ -26,3 +26,5 @@ const getDb = () => {
     }
     return db;
 };
+
+export { initdb, getDb };

@@ -1,0 +1,130 @@
+### Variables
+@baseUrl = http://localhost:8080
+
+#########################################################
+###################### CUSTOMERS #########################
+#########################################################
+
+### Get all customers
+GET {{baseUrl}}/customers
+
+###
+
+### Get customer by ID
+# Reemplaza el ID por uno existente
+GET {{baseUrl}}/customers/PUT_CUSTOMER_ID_HERE
+
+###
+
+### Create customer
+POST {{baseUrl}}/customers
+Content-Type: application/json
+
+{
+    "firstName": "Saul",
+    "lastName": "Arana",
+    "email": "saul@email.com",
+    "phone": "5555-1234",
+    "membership": "Premium",
+    "favoriteGenre": "Science Fiction",
+    "moviesWatched": []
+}
+
+###
+
+### Update customer
+PUT {{baseUrl}}/customers/PUT_CUSTOMER_ID_HERE
+Content-Type: application/json
+
+{
+    "firstName": "Saul Abraham",
+    "lastName": "Arana",
+    "email": "saul@email.com",
+    "phone": "5555-9876",
+    "membership": "VIP",
+    "favoriteGenre": "Action",
+    "moviesWatched": []
+}
+
+###
+
+### Delete customer
+DELETE {{baseUrl}}/customers/PUT_CUSTOMER_ID_HERE
+
+#########################################################
+######################## MOVIES ##########################
+#########################################################
+
+###
+
+### Get all movies
+GET {{baseUrl}}/movies
+
+###
+
+### Get movie by ID
+GET {{baseUrl}}/movies/PUT_MOVIE_ID_HERE
+
+###
+
+### Create movie
+POST {{baseUrl}}/movies
+Content-Type: application/json
+
+{
+    "title": "Interstellar",
+    "genre": "Science Fiction",
+    "director": "Christopher Nolan",
+    "releaseYear": 2014,
+    "duration": 169,
+    "rating": 8.7,
+    "available": true
+}
+
+###
+
+### Update movie
+PUT {{baseUrl}}/movies/PUT_MOVIE_ID_HERE
+Content-Type: application/json
+
+{
+    "title": "Interstellar",
+    "genre": "Science Fiction",
+    "director": "Christopher Nolan",
+    "releaseYear": 2014,
+    "duration": 170,
+    "rating": 9.0,
+    "available": false
+}
+
+###
+
+### Delete movie
+DELETE {{baseUrl}}/movies/PUT_MOVIE_ID_HERE
+
+#########################################################
+################ VALIDATION TESTS ########################
+#########################################################
+
+###
+
+### Customer validation test (Should return 400)
+POST {{baseUrl}}/customers
+Content-Type: application/json
+
+{
+    "firstName": "",
+    "email": "not-an-email"
+}
+
+###
+
+### Movie validation test (Should return 400)
+POST {{baseUrl}}/movies
+Content-Type: application/json
+
+{
+    "title": "",
+    "rating": 15,
+    "available": "yes"
+}

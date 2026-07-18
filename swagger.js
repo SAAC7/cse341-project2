@@ -8,10 +8,10 @@ const PORT = process.env.PORT || 3000;
 
 const doc = {
   info: {
-    title: 'CSE341 Project API',
+    title: 'CSE341 Project CRUD API',
     description: 'This is the API documentation for the CSE341 Project. It provides information about the available endpoints, request parameters, and response formats.',
   },
-  host: 'localhost:${PORT}',
+  host: `localhost:${PORT}`,
   schemes: ['http','https'],
 };
 
