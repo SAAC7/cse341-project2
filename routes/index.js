@@ -1,0 +1,17 @@
+import expres from 'express';
+import movies from './movies.js';
+import customers from './customers.js';
+import swagger from './swagger.js';
+
+const router = expres.Router();
+
+router.use('/',swagger);
+
+router.get('/', (req,res) => {
+    // #swagger.tags = ["Hello World"];
+    res.send('Hello, Wordld!')
+});
+router.use('/movies',movies);
+router.use('/customers',customers);
+
+export default router;
