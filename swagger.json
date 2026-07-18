@@ -5,11 +5,11 @@
     "description": "This is the API documentation for the CSE341 Project. It provides information about the available endpoints, request parameters, and response formats.",
     "version": "1.0.0"
   },
-  "host": "localhost:8080",
+  "host": "cse341-project2-svhx.onrender.com",
   "basePath": "/",
   "schemes": [
-    "http",
-    "https"
+    "https",
+    "http"
   ],
   "paths": {
     "/": {
@@ -21,16 +21,6 @@
         "responses": {
           "200": {
             "description": "OK"
-          }
-        }
-      }
-    },
-    "/api-docs": {
-      "get": {
-        "description": "",
-        "responses": {
-          "default": {
-            "description": ""
           }
         }
       }
