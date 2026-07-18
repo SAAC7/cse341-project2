@@ -1,9 +1,9 @@
-import expres from 'express';
+import express from 'express';
 import movies from './movies.js';
 import customers from './customers.js';
 import swagger from './swagger.js';
 
-const router = expres.Router();
+const router = express.Router();
 
 router.use('/',swagger);
 
