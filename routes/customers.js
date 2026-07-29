@@ -2,7 +2,7 @@ import express from 'express';
 import customers from '../controller/customers_con.js'
 import { validateCustomer, customerValidationRules } from '../middleware/validateCustomer.js';
 
-import { isAuthenticated } = from '../middleware/authenticate.js'
+import { isAuthenticated } from '../middleware/authenticate.js'
 
 const router = express.Router();
 

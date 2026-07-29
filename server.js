@@ -18,9 +18,9 @@ app
         secret: process.env.SESSION_SECRET,
         resave: false,
         saveUninitialized: true,
-    }));
-    .use(passport.initialize());
-    .use(passport.session());
+    }))
+    .use(passport.initialize())
+    .use(passport.session())
     .use(cors())
     .use(express.json())
     .use((req, res, next) => {
@@ -32,8 +32,9 @@ app
     .use('/', routes);
 
 app.get('/',(req,res) => {
-    res.send(req.session.user !== undefined ? 'Logged in as $(req.session.user.displayName)': "Logged Out")
+    res.send(req.session.user !== undefined ? `Logged in as ${req.session.user.displayName}`: "Logged Out")
 });
+
 app.get('/github/callback', passport.authenticate('github',{
     failureRedirect: '/api-docs', session: false}),
     (req, res)=> {

@@ -2,7 +2,7 @@ import express from 'express';
 import movies from '../controller/movies_con.js'
 import { validateMovie, movieValidationRules } from '../middleware/validateMovie.js';
 
-import { isAuthenticated } = from '../middleware/authenticate.js'
+import { isAuthenticated } from '../middleware/authenticate.js'
 
 const router = express.Router();
 
@@ -13,7 +13,7 @@ router.post('/',
     movieValidationRules,
     validateMovie,
     movies.createMovie);
-router.put('/:id', 
+router.put('/:id',
     isAuthenticated,
     movieValidationRules,
     validateMovie,
