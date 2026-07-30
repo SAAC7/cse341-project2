@@ -24,13 +24,13 @@ const getAllMovies = async (req, res) => {
 const getMovieById = async (req, res) => {
     // #swagger.tags = ['Movies'];
     // #swagger.description = 'Endpoint to get a movie by ID';
-    const movieId = req.params.id;
-    if (!ObjectId.isValid(movieId)) {
-        return res.status(400).json({
-            error: 'Invalid movie ID'
-        });
-    }
     try {
+        const movieId = req.params.id;
+        if (!ObjectId.isValid(movieId)) {
+            return res.status(400).json({
+                error: 'Invalid movie ID'
+            });
+        }
         const db = getDb();
         const movie = await db.collection('movies').findOne({
             _id: new ObjectId(movieId)

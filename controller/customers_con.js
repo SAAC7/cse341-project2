@@ -22,13 +22,16 @@ const getAllCustomer = async (req, res) => {
 const getCustomerById = async (req, res) => {
     // #swagger.tags = ['customers'];
     // #swagger.description = 'Endpoint to get a contact by ID';
-    const customerId = req.params.id;
-    if (!ObjectId.isValid(customerId)) {
-        return res.status(400).json({
-            error: 'Invalid customer ID'
-        });
-    }
+
     try {
+        const customerId = req.params.id;
+
+        if (!ObjectId.isValid(customerId)) {
+            return res.status(400).json({
+                error: 'Invalid customer ID'
+            });
+        }
+
         const db = getDb();
         const customer = await db.collection('customers').findOne({
             _id: new ObjectId(customerId)
